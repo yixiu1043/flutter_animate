@@ -73,26 +73,27 @@ class _MyHomePageState extends State<MyHomePage> {
           tween: Tween(begin: 0, end: 1.5),
           // tween: Tween(begin: 0.0, end: 3.14), // Pi: 3.14 半圆
           // tween: Tween(begin: Offset(0.0, 0.0), end: Offset(20.0, 20.0)),
-          builder: (BuildContext context, num value, Widget child) {
+          // builder: (BuildContext context, num value, Widget child) {
+          builder: (BuildContext context, Offset value, Widget child) {
             return Container(
               width: 300,
               height: 300,
               color: Colors.blue,
               // 1. Transform.scale
-              child: Transform.scale(
-                scale: value,
-                child: Center(child: Text('Hi', style: TextStyle(fontSize: 75),))
-              ),
+              // child: Transform.scale(
+              //  scale: value,
+              //  child: Center(child: Text('Hi', style: TextStyle(fontSize: 75),))
+              // ),
               // 2. Transform.rotate
               // child: Transform.rotate(
               //     angle: value,
               //     child: Center(child: Text('Hi', style: TextStyle(fontSize: 75),))
               // ),
               // 3. Transform.translate
-              // child: Transform.translate(
-              //     offset: value,
-              //     child: Center(child: Text('Hi', style: TextStyle(fontSize: 75),))
-              // ),
+              child: Transform.translate(
+                  offset: value,
+                  child: Center(child: Text('Hi', style: TextStyle(fontSize: 75),))
+              ),
             );
           },
         ),
